@@ -621,9 +621,9 @@ int wndprog_get_text(char *s, char *mask, int *select, t_sortheader *ph, int col
 				//ret=30;strcpy(s,"Duvdeijrsfgahztbcl");
 				//ret=30;strcpy(s,"abcdefghijklmnopqrstuvwxyz");
 				//ret=30;strcpy(s,"ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-				//ret=30;strcpy(s,"0123456789.&é'(-è_çà)^$ù*!;,");
-				//ret=30;strcpy(s,"?./§%µ¨£°+^@`|[]¤~\"");
-				//ret=30;strcpy(s,"?./§%µ¨£°");
+				//ret=30;strcpy(s,"0123456789.&?(-è_çà)^$?!;,");
+				//ret=30;strcpy(s,"?./?µ¨£°+^@`|[]¤~\"");
+				//ret=30;strcpy(s,"?./?µ¨£°");
 				//memset(mask,DRAW_GRAPH,ret);
 			}
 			else if (*pline->result != NULL) 
@@ -922,7 +922,8 @@ int setProgLineValue(int line, string  &value)
 
 	if (ollylang->showVarHistory && strcmp(ppl->values,"")) {
 		if ( values.length() < PROG_VAL_LEN-2) {
-			if (ppl->values[0] != ',' && ppl->values[0] != '®' && value.compare("®") != 0)
+            //FIXME: chliu changed 2013-11-14, change trademark to '@'
+			if (ppl->values[0] != ',' && ppl->values[0] != 0xae && value.compare("\xae\0") != 0)
 				values += " ";
 			values.append(ppl->values);
 		}

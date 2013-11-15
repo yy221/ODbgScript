@@ -1860,7 +1860,8 @@ bool OllyLang::GetFLTOpValue(string op, long double &value)
 		if(GetDWOpValue(op, addr)) {
 
 			//Pointer Mark in Values column (open quote char '<<')
-			string openquote = "®";
+            //FIXME: chliu changed 2013-11-15, the old version is a trademark char!
+			string openquote = "\xae\0";             
 			setProgLineValue(script_pos+1, openquote);
 
 			Readmemory(&value, addr, 8, MM_SILENT);
