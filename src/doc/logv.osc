@@ -1,0 +1,28 @@
+var tmp
+var addr
+var end
+
+ask "input begin address"
+cmp $RESULT, 0
+je quit
+mov tmp, $RESULT
+
+ask "input end address"
+cmp $RESULT, 0
+je quit
+mov end, $RESULT
+
+continue: 
+    mov addr, [tmp]
+    cmp addr, 00040000
+    jbe next
+
+    GMEMI addr, MEMORYBASE
+    logv tmp,addr,$RESULT 
+
+next:
+    add tmp, 4
+    cmp tmp, end
+    jb continue 
+quit:
+    ret
