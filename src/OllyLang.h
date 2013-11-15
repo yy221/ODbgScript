@@ -326,6 +326,7 @@ private:
 	bool DoLOADLIB(string args);
 	bool DoLOG(string args);
 	bool DoLOGBUF(string args);
+    bool DoLOGV(string args);
     bool DoLM(string args);
 	bool DoMEMCOPY(string args);
 	bool DoMOV(string args);

@@ -185,6 +185,7 @@ OllyLang::OllyLang()
     commands["lm"] = &OllyLang::DoLM;
 	commands["log"] = &OllyLang::DoLOG;
 	commands["logbuf"] = &OllyLang::DoLOGBUF;
+    commands["logv"] = &OllyLang::DoLOGV; //chliu added 2013-11-15
 	commands["memcpy"] = &OllyLang::DoMEMCOPY;
 	commands["mov"] = &OllyLang::DoMOV;
 	commands["msg"] = &OllyLang::DoMSG;

@@ -4116,6 +4116,48 @@ bool OllyLang::DoLOGBUF(string args)
 	return false;
 }
 
+bool OllyLang::DoLOGV(string args)
+{
+    vector<string> v;
+    string dst;
+
+    split(v, args, ',');
+
+    int len = 0; 
+    for ( int i = 0; i<v.size(); ++i )
+    {
+        DWORD dw = 0;
+
+        if( GetDWOpValue(v[i], dw))
+	    {
+            Int2Hex (dw, dst );
+
+            if (len + dst.size() > TEXTLEN - 1)
+            {
+                break;
+            }
+
+            memcpy ( buffer + len, dst.c_str(), dst.size()+1 );
+            len += dst.size();
+            buffer[len++] = ',';
+        }
+    }
+
+	if ( len > 0 ) 
+    {
+        buffer[len] = 0;
+
+        Infoline(buffer);
+		Addtolist(0, 1, buffer);
+		add2log(buffer);
+
+        return true;
+    }
+
+    return false;
+}
+
+
 bool OllyLang::DoMEMCOPY(string args)
 {
 	string ops[3];

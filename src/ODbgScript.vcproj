@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ODbgScript"
 	ProjectGUID="{E70561A4-6B5D-4044-99AE-91BAE1975AB6}"
 	RootNamespace="ODbgScript"
@@ -128,7 +128,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy.bat"
+				CommandLine="copy /y Release\ODbgScript.dll D:\vmware_share\od\plugin\"
 			/>
 		</Configuration>
 		<Configuration
@@ -140,7 +140,7 @@
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="0"
-			WholeProgramOptimization="1"
+			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -187,7 +187,7 @@
 				BrowseInformation="1"
 				BrowseInformationFile=".\Debug/"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="3"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -206,7 +206,7 @@
 				UseLibraryDependencyInputs="true"
 				AdditionalDependencies="ollydbgvc7.lib kernel32.lib user32.lib shlwapi.lib Comdlg32.lib shell32.lib msvcrt_winxp.obj delayimp.lib mfcs42.lib mfc42.lib msvcprt.lib msvcrt.lib"
 				OutputFile="Debug/ODbgScript.dll "
-				LinkIncremental="1"
+				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="C:\WinDDK\7600.16385.1\lib\wxp\i386;C:\WinDDK\7600.16385.1\lib\Crt\i386;C:\WinDDK\7600.16385.1\lib\Mfc\i386"
 				IgnoreAllDefaultLibraries="true"
@@ -241,7 +241,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copydbg.bat"
+				CommandLine="copy /y Debug\ODbgScript.dll D:\vmware_share\od_debug\plugin\"
 			/>
 		</Configuration>
 	</Configurations>
