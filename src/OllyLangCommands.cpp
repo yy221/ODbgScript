@@ -4116,6 +4116,11 @@ bool OllyLang::DoLOGBUF(string args)
 	return false;
 }
 
+/*usage:
+var tmp
+GMEMI [tmp], MEMORYBASE
+logv tmp,[tmp],$RESULT,"hello" 
+*/
 bool OllyLang::DoLOGV(string args)
 {
     vector<string> v;
