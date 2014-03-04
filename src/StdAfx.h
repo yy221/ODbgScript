@@ -15,6 +15,16 @@
 // Insert your headers here
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
+
+#define WINVER 0x0500
+
+#include <afx.h>
+//#include <windows.h>
+#include <Commdlg.h>
+//#include <Winuser.h>
+#include <shlwapi.h>
+#include <shellapi.h>
+
 #include <iostream>
 
 using namespace std;
@@ -28,16 +38,6 @@ using namespace std;
 #include <utility>
 #include <algorithm>
 #include <set>
-
-
-#include <afx.h>
-//#include <windows.h>
-#include <Commdlg.h>
-//#include <Winuser.h>
-#include <shlwapi.h>
-#include <shellapi.h>
-
-
 
 #include "var.h"
 #include "plugin.h"
